@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NewsGuard AI - Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h1, h2, h4 {
+            color: #2c3e50;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .score {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #16a085;
+        }
+        .btn-back {
+            display: inline-block;
+            margin-top: 1rem;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: #3498db;
+            color: white;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📰 NewsGuard AI</h1>
+
+        <h2>Summary</h2>
+        <p>{{ summary }}</p>
+
+        <h2>Trustworthiness Score</h2>
+        <p class="score">{{ score }}%</p>
+
+        <h4>🧠 Explanation</h4>
+        <p><em>{{ reasoning }}</em></p>
+
+        <h2>Original Text</h2>
+        <p>{{ original }}</p>
+
+        <a href="/" class="btn-back">🔙 Back to Home</a>
+    </div>
+</body>
+</html>
+
