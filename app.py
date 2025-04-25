@@ -51,18 +51,20 @@ def trustworthiness_score_with_openai(text):
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
-        url = request.form.get('url')
-        user_text = request.form.get('text')
+        url = request.form["url"]
 
-        text = user_text or fetch_article_text(url)
+        if not re.match(r'https?://', url):
+            return render_template("index.html", error="Please enter a valid URL starting with http:// or https://")
 
-        if not text:
-            return render_template('index.html', error="Unable to retrieve or process the article.")
+        article_text = fetch_article_text(url)
+        if not article_text:
+            return render_template("index.html", error="Failed to extract article content. Please try another URL.")
 
-        summary = summarize_text_with_openai(text)
-        score, reasoning = trustworthiness_score_with_openai(text)
 
-        return render_template('result.html', summary=summary, score=score, reasoning=reasoning, original=text)
+        summary = summarize_text_with_openai(article_text)
+        score, reasoning = trustworthiness_score_with_openai(article_text)
+
+        return render_template('result.html', summary=summary, score=score, reasoning=reasoning, original=article_text)
 
     return render_template('index.html')
 
