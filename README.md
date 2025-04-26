@@ -13,7 +13,7 @@ The screenshots below show the results of giving links of fake news and wikipedi
 
 ## 🔍 Features
 
-- ✅ Input a **URL** or paste a **text** directly
+- ✅ Copy and paste a **URL**
 - 🧠 **Summarizes** the content using GPT
 - 📊 Provides a **trustworthiness score** (0–100)
 - 💬 Explains the reasoning behind the score
