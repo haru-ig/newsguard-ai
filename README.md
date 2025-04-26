@@ -25,7 +25,7 @@ The screenshots below show the results of giving links of fake news and wikipedi
 
 Try it locally with:
 
-git clone https://github.com/your-username/newsguard-ai.git
+git clone https://github.com/haru-ig/newsguard-ai.git
 cd newsguard-ai
 python3 -m venv venv
 source venv/bin/activate
